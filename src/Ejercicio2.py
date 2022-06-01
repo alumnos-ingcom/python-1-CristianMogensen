@@ -7,8 +7,6 @@
 2. Números positivos y negativos
 """
 
-
-
 def signo(numero):
     """
     Retorna el signo del numero ingresado.
@@ -16,14 +14,35 @@ def signo(numero):
     - (-1) es negativo
     - (0) es cero
     """
-
-    resultado = 0
     
-    if numero > 0:
-        resultado += 1 #Si es positivo, le sumo 1 al resultado a devolver.
-    elif numero < 0:
-        resultado -= 1 #Si es negativo, le resto 1 al resultado a devolver.
+    #Declaro y defino variables auxiliares:
+    resultado = 0
+    modulo = abs(numero)
+    aux = numero
+    contador = 0
+    
+    if (numero != 0):
+        #Si el numero es cero, el resultado será 0
+        #y no hará falta que entre en el bucle.
         
+        resultado = -1
+        
+        #En el bucle while verifico que el número sea positivo.
+        #Si no lo es, el resultado del bucle while no realizará cambios
+        #en la variable resultado y, por lo tanto, el mismoserá -1
+        #(definido anteriormente) y querrá decir que el número es negativo.
+        while (contador <= modulo):
+            
+            aux -= 1
+            contador += 1
+            
+            if (aux == 1):
+                #Si es positivo, en los últimos pasos del bucle se debe
+                #cumplir la condición (aux == 1) y la variable resultado
+                #cambiará a 1, saliendo del bucle con el break.
+                resultado = 1
+                break
+    
     return resultado
 
 
@@ -41,19 +60,9 @@ def principal():
     
     #Pruebo la funcion con los 3 posibles casos de prueba:
     
-    #-- Positivo:
-    n = 20
-    print(f"El numero {n} es positivo, la funcion signo({n}) retorna: {signo(n)}.")
-    
-    #-- Negativo:
-    n = -30
-    print(f"El numero {n} es negativo, la funcion signo({n}) retorna: {signo(n)}.")
-    
-    #-- Cero:
-    n = 0
-    print(f"El numero {n} es cero, la funcion signo({n}) retorna: {signo(n)}.")
-    
-    pass
+    entrada = int(input("Ingrese número: "))
+    print(f"Signo de {entrada}: {signo(entrada)}")
+
 
 if __name__ == "__main__":
     principal()

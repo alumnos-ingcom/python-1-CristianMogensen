@@ -26,21 +26,29 @@ def division_lenta(dividendo, divisor):
     #sean iguales:
     from Ejercicio2 import signo
     
+    #Importo la función de suma_lenta para reemplazar la suma
+    from Ejercicio4 import suma_lenta
+    
     if (signo(dividendo) == signo(divisor)):
         while (abs(resto) >= abs(divisor)):
-            cociente += 1
-            resto -= divisor
+            #cociente += 1
+            #resto -= divisor
+            
+            cociente = suma_lenta(cociente, 1)
+            resto = suma_lenta(resto, -divisor)
     else:
         while (abs(resto) >= abs(divisor)):
-            cociente -= 1
-            resto += divisor
+            #cociente -= 1
+            #resto += divisor
+            
+            cociente = suma_lenta(cociente, -1)
+            resto = suma_lenta(resto, divisor)
     
     #Defino la tupla a retornar por la función:
     resultado = (cociente, resto)
     
     return resultado
-    
-    
+
 
 def principal():
     """
@@ -106,6 +114,7 @@ def principal():
     DIV = 3
     RES = division_lenta(NUM, DIV)
     print(f"dividendo({NUM}) < divisor({DIV}),\tintercambiados,\tenteros:\t{RES}")
-    
+
+
 if __name__ == "__main__":
     principal()

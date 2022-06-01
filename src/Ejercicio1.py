@@ -7,43 +7,57 @@
 1. Conversión de temperaturas
 """
 
-
 def convertir_a_fahrenheit(centigrados):
     """
     Convierte grados fahrenheit a grados centígrados.
     """
+    
+    #Realiza la operación de conversión:
     resultado_fahrenheit = (centigrados * 9/5) + 32
+    
     return resultado_fahrenheit
+
 
 def convertir_a_centigrados(fahrenheit):
     """
     Convierte grados centígrados a grados fahrenheit.
     """
+    
+    #Realiza la operación de conversión:
     resultado_centigrados = (fahrenheit - 32) * 5/9
+    
     return resultado_centigrados
 
 
 def principal():
     """
-    Se quiere transformar temperaturas en grados fahrenheit a grados centígrados y viceversa.
+    Se quiere transformar temperaturas en grados fahrenheit
+    a grados centígrados y viceversa.
 
-    Escribir las funciones para convertir la temperatura en grados centigrados en fahrenheit como un número decimal, utilice esta formula para calcular los grados centígrados y retorne el resultado obtenido. Y viceversa.
+    Escribir las funciones para convertir la temperatura en
+    grados centigrados en fahrenheit como un número decimal,
+    utilice esta formula para calcular los grados centígrados
+    y retorne el resultado obtenido. Y viceversa.
     """
     
     #
-    # PRECONDICIONES: Ingreso de números decimales (grados) y un caracter (string) para indicar el tipo de grado.
+    # PRECONDICIONES: Ingreso de números decimales (grados) y un
+    #                 caracter (string) para indicar el tipo de grado.
     #
     # POSCONDICIONES: Retorna números decimales.
     #    
     
+    #Imprimo título:
     print("Conversor de grados: centigrados <-> fahrenheit")
     
-    TipoDeGrados = '' #Declaro y defino la variable que indicará el tipo de grados que ingresará el usuario.
+    #Declaro y defino la variable que indicará el tipo de grados que
+    #ingresará el usuario.
+    TipoDeGrados = ''
     
+    #Verifico que se indique correctamente el tipo de grados a ingresar.
     while (TipoDeGrados != 'c' and TipoDeGrados != 'f' and TipoDeGrados != 'C' and TipoDeGrados != 'F'):
-        #Verifico que se indique correctamente el tipo de grados a ingresar.
-        
-        #El usuario ingresa el caracter que indica el tipo de grados que ingresará:
+        #El usuario ingresa el caracter que indica el tipo de grados
+        #que ingresará:
         TipoDeGrados = str(input("Indique tipo de grados a ingresar (c:centigrados / f:fahrenheit): "))
     
     #El usuario ingresa la cantidad de grados a convertir:
@@ -57,10 +71,9 @@ def principal():
         grados_convertidos = convertir_a_fahrenheit(grados)
         grado = 'F'
     
-    #Imprimo resultado
+    #Finalmente, imprimo resultado.
     print(f"{grados} °{TipoDeGrados.upper()} = {grados_convertidos} °{grado}")
-    
-    pass
+
 
 if __name__ == "__main__":
     principal()

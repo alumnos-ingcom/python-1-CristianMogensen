@@ -16,8 +16,11 @@ def compara(numero, otro_numero):
         - (1) si el primero es mayor que el segundo
     """
     
-    #Reutilizo la funcion del ejercicio 2:
+    #Reutilizo la funcion signo del ejercicio 2:
     from Ejercicio2 import signo
+    
+    #Comparo ambos números y determino cuál es mayor
+    #observando el signo final de la comparación.
     comparacion = numero - otro_numero
     
     return signo(comparacion)
@@ -25,7 +28,8 @@ def compara(numero, otro_numero):
 
 def principal():
     """
-    Escribir una función que utilizando sumas y restas, reciba dos valores y retorne:
+    Escribir una función que utilizando sumas y restas,
+    reciba dos valores y retorne:
 
         - Retornar -1 si el primero es menor que el segundo
         - Retornar 0 si son iguales
@@ -38,24 +42,10 @@ def principal():
     # POSCONDICIONES: Retorna números enteros (-1, 0 o 1).
     #    
     
-    #Pruebo la funcion con los 3 casos de prueba posibles:
-    
-    #-- numero < otro_numero (resultado=-1)
-    N1 = 5
-    N2 = 6
-    print(f"Dado {N1}<{N2} la funcion compara({N1},{N2}) retorna: {compara(N1,N2)}")
-    
-    #-- numero > otro_numero (resultado=1)
-    N1 = 8
-    N2 = 3
-    print(f"Dado {N1}>{N2} la funcion compara({N1},{N2}) retorna: {compara(N1,N2)}")
-    
-    #-- numero == otro_numero (resultado=0)
-    N1 = 3
-    N2 = 3
-    print(f"Dado {N1}={N2} la funcion compara({N1},{N2}) retorna: {compara(N1,N2)}")
-    
-    pass
+    N1 = int(input("Ingrese numero1: "))
+    N2 = int(input("Ingrese numero2: "))
+    print(f"Resultado de comparación: {compara(N1, N2)}")
+
 
 if __name__ == "__main__":
     principal()

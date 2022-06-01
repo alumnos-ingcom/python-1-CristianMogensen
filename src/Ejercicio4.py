@@ -18,6 +18,7 @@ def suma_lenta(numero, otro_numero):
     
     #Importo la función signo del ejercicio 2
     from Ejercicio2 import signo
+    
     #Determina si la unidad a sumar es positiva o negativa:
     unidad = signo(otro_numero)
 
@@ -27,6 +28,7 @@ def suma_lenta(numero, otro_numero):
         contador -= 1
         
     return resultado
+
 
 def principal():
     """
@@ -43,22 +45,14 @@ def principal():
     # POSCONDICIONES: Retorna un número entero (resultado de la suma).
     #
     
-    #Pruebo los 3 casos posibles de prueba:    
+    #Imprimo título:
+    print("Suma lenta:")
     
-    #otro_numero>0:
-    N1 = 10
-    N2 = 11
-    print(f"{N1} + {N2} = {suma_lenta(N1,N2)}")
+    N1 = int(input("Ingrese numero1: "))
+    N2 = int(input("Ingrese numero2: "))
     
-    #otro_numero<0:
-    N1 = 10
-    N2 = -7
-    print(f"{N1} + {N2} = {suma_lenta(N1,N2)}")
-    
-    #otro_numero=0:
-    N1 = 10
-    N2 = 0
-    print(f"{N1} + {N2} = {suma_lenta(N1,N2)}")
+    print(f"{N1} + {N2} = {suma_lenta(N1, N2)}")
+
 
 if __name__ == "__main__":
     principal()
