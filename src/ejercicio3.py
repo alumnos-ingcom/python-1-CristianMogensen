@@ -26,6 +26,8 @@ def compara(numero: int, otro_numero: int) -> int:
     - (-1) si el primero es menor que el segundo
     - (0) si son iguales
     - (1) si el primero es mayor que el segundo
+    PRECONDICIONES: Recibe dos números enteros a comparar.
+    POSCONDICIONES: Retorna un número entero (1, -1 o 0).
     """
 
     # Comparo ambos números y determino cuál es mayor
