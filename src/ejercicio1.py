@@ -83,7 +83,7 @@ def principal():
 
     # Se verifica con el ciclo while que se ingrese un valor válido para la
     # conversión.
-    while (grados_a_convertir == None):
+    while grados_a_convertir is None:
 
         # Se prueba que no haya errores al ingresar el número. Si hay un
         # error, se lo ataja con la excepción.
@@ -97,7 +97,7 @@ def principal():
             # Se imprime un mensaje de error.
             print("Error al ingresar la cantidad de grados a convertir.")
             print("El valor debe ser un número decimal.\n")
-            
+
             # Se reinicia la variable para que se siga cumpliendo la condición
             # del ciclo while y así ingrese nuevamente el valor para la
             # variable.
