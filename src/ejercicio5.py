@@ -11,7 +11,6 @@ cociente y resto de dos números enteros.
 def division_lenta(dividendo, divisor):
 """
 
-from typing import Union, Tuple
 
 # Se importa la función signo del ejercicio 2, para verificar que los signos
 # del divisor y dividendo sean iguales.
@@ -27,8 +26,7 @@ except ImportError as exc:
     from src.ejercicio4 import suma_lenta
 
 
-def division_lenta(dividendo: Union[int, float],
-                   divisor: Union[int, float]) -> Tuple[Union[int, float]]:
+def division_lenta(dividendo: int, divisor: int) -> tuple:
     """
     Esta función realiza la division entre dos numeros (dividendo, divisor)
     mediante restas sucesivas y devuelve una tupla con (cociente, resto)
@@ -42,10 +40,10 @@ def division_lenta(dividendo: Union[int, float],
 
     # Se declara y define la variable que cuenta las veces que el divisor
     # "entra" en el dividendo, para luego determinar el cociente final.
-    cociente: Union[int, float] = 0
+    cociente: int = 0
 
     # Se declara y define la variable que determina el resto de la división.
-    resto: Union[int, float] = dividendo
+    resto: int = dividendo
 
     if (signo(dividendo) == signo(divisor)):
 
@@ -67,7 +65,7 @@ def division_lenta(dividendo: Union[int, float],
             resto = suma_lenta(resto, divisor)
 
     # Defino la tupla a retornar por la función:
-    resultado: Tuple[Union[int, float]] = (cociente, resto)
+    resultado: tuple = (cociente, resto)
 
     return resultado
 
@@ -83,46 +81,46 @@ def principal():
 
     # Se declara y define una variable en la que el usuario ingresará el
     # dividendo.
-    dividendo: float = None
+    dividendo: int = None
 
     # Se define un ciclo while para asegurar que el primer número ingresado
-    # sea un decimal válido.
+    # sea un entero válido.
     while dividendo is None:
 
         # Se realiza el input del usuario y se ataja el error si no se ingresa
         # un valor válido. (se repite el input hasta que sea correcto).
         try:
 
-            dividendo = float(input("Ingrese el dividendo: "))
+            dividendo = int(input("Ingrese el dividendo: "))
 
         except ValueError as exc:
 
             # Se ataja error, en caso de que no se haya ingresado un valor
             # válido, y se imprime mensaje de error.
-            print("Error: El valor ingresado debe ser un número decimal.\n")
+            print("Error: El valor ingresado debe ser un número entero.\n")
 
             # Se reinicia la variable para que se repita el ciclo while.
             dividendo = None
 
     # Se declara y define una variable en la que el usuario ingresará el
     # divisor.
-    divisor: float = None
+    divisor: int = None
 
     # Se define un ciclo while para asegurar que el primer número ingresado
-    # sea un decimal válido.
+    # sea un entero válido.
     while divisor is None:
 
         # Se realiza el input del usuario y se ataja el error si no se ingresa
         # un valor válido. (se repite el input hasta que sea correcto).
         try:
 
-            divisor = float(input("Ingrese el divisor: "))
+            divisor = int(input("Ingrese el divisor: "))
 
         except ValueError as exc:
 
             # Se ataja error, en caso de que no se haya ingresado un valor
             # válido, y se imprime mensaje de error.
-            print("Error: El valor ingresado debe ser un número decimal.\n")
+            print("Error: El valor ingresado debe ser un número entero.\n")
 
             # Se reinicia la variable para que se repita el ciclo while.
             divisor = None
