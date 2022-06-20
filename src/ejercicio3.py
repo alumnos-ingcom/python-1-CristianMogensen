@@ -20,7 +20,7 @@ def compara(numero, otro_numero):
 from ejercicio2 import signo
 
 
-def compara(numero: int, otro_numero: int):
+def compara(numero: int, otro_numero: int) -> int:
     """
     Esta función compara dos numeros, retornando:
     - (-1) si el primero es menor que el segundo
