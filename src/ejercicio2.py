@@ -23,7 +23,7 @@ def signo(numero: int) -> int:
     POSCONDICIONES: Devuelve un número entero (1, -1, o 0).
     """
 
-    # Declaro y defino variables auxiliares:
+    # Se declaran y definen variables auxiliares:
     resultado: int = 0
     modulo: int = abs(numero)
     aux: int = numero
@@ -35,14 +35,11 @@ def signo(numero: int) -> int:
 
         resultado = -1
 
-        # En el bucle while verifico que el número sea positivo.
+        # En el bucle while se verifica que el número sea positivo.
         # Si no lo es, el resultado del bucle while no realizará cambios
-        # en la variable resultado y, por lo tanto, el mismoserá -1
+        # en la variable resultado y, por lo tanto, el mismo será -1
         # (definido anteriormente) y querrá decir que el número es negativo.
         while (contador <= modulo):
-
-            aux -= 1
-            contador += 1
 
             if (aux == 1):
                 # Si es positivo, en los últimos pasos del bucle se debe
@@ -50,6 +47,9 @@ def signo(numero: int) -> int:
                 # cambiará a 1, saliendo del bucle con el break.
                 resultado = 1
                 break
+
+            aux -= 1
+            contador += 1
 
     return resultado
 
