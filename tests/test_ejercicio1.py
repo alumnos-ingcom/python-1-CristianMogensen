@@ -11,7 +11,7 @@ from src.ejercicio1 import convertir_a_fahrenheit, convertir_a_centigrados
 
 
 """
-Tests del Ejercicio 1:Conversión de temperaturas
+Tests del Ejercicio 1: Conversión de temperaturas
 
 Se buscan testear 3 casos de prueba para la función convertir_a_fahrenheit y
 3 para la función convertir_a_centigrados:
