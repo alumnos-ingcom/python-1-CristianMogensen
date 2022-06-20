@@ -163,6 +163,6 @@ def test_convertir_fahrenheit_a_centigrados_cero():
 
     assert (resultado < 0), "El resultado debe ser menor que cero."
 
-    # Defino el primer mensaje de error (muy largo para pycodestyle):
+    # Defino el segundo mensaje de error (muy largo para pycodestyle):
     error2_msj: str = "El resultado debe ser un número decimal."
     assert ((resultado > -17.8) and (resultado < -17.7)), error2_msj
