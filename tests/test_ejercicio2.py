@@ -5,68 +5,80 @@
 
 import pytest
 
-from src.Ejercicio2 import signo
+from src.ejercicio2 import signo
 
 
 """
-Test del ejercicio 2.
-Defino 5 casos de prueba en total.
+Tests del Ejercicio 2: Números positivos y negativos
+
+Se buscan testear 3 casos de prueba para la función signo:
+
+signo(numero: int) -> int:
+1- numero > 0. Resultado esperado: 1
+2- numero = 0. Resultado esperado: 0
+3- numero < 0. Resultado esperado: -1
 """
 
 
-def test_signo_negativo_entero():
+def test_signo_positivo():
     """
-    Testeo el signo negativo de la función, con
-    número entero (int) en el input.
+    Test función signo(numero)
+    Caso de prueba 1:
+    - Entrada: numero = 12
+    - Resultado esperado: resultado = 1
     """
-    numero = -30
-    resultado = signo(numero)
-    assert isinstance(resultado, int), "El resultado debe ser un número entero."
-    assert resultado < 0, "El resultado debe ser menor que cero."
-    assert resultado == -1, "El resultado obtenido no es el esperado."
 
+    # Entrada para probar en la función.
+    numero: int = 12
 
-def test_signo_negativo_float():
-    """
-    Testeo el signo negativo de la función, con
-    número decimal (float) en el input.
-    """
-    numero = -15.55
-    resultado = signo(numero)
-    assert isinstance(resultado, int), "El resultado debe ser un número entero."
-    assert resultado < 0, "El resultado debe ser menor que cero."
-    assert resultado == -1, "El resultado obtenido no es el esperado."
+    resultado: int = signo(numero)
+
+    # Mensaje de error (string muy larga, uso de variable por pycodestyle).
+    error_msj: str = "El resultado debe ser un número entero."
+    assert (isinstance(resultado, int)), error_msj
+
+    assert (resultado > 0), "El resultado debe ser mayor que cero."
+
+    assert (resultado == 1), "El resultado obtenido no es el esperado."
 
 
 def test_signo_nulo():
     """
-    Testeo el signo nulo o cero de la función.
+    Test función signo(numero)
+    Caso de prueba 2:
+    - Entrada: numero = 0
+    - Resultado esperado: resultado = 0
     """
-    numero = 0
-    resultado = signo(numero)
-    assert isinstance(resultado, int), "El resultado debe ser un número entero."
-    assert resultado == 0, "El resultado obtenido no es el esperado."
+
+    # Entrada para probar en la función.
+    numero: int = 0
+
+    resultado: int = signo(numero)
+
+    # Mensaje de error (string muy larga, uso de variable por pycodestyle).
+    error_msj: str = "El resultado debe ser un número entero."
+    assert (isinstance(resultado, int)), error_msj
+
+    assert (resultado == 0), "El resultado obtenido no es el esperado."
 
 
-def test_signo_positivo_entero():
+def test_signo_negativo():
     """
-    Testeo el signo positivo de la función, con
-    número entero (int) en el input.
+    Test función signo(numero)
+    Caso de prueba 3:
+    - Entrada: numero = -33
+    - Resultado esperado: resultado = -1
     """
-    numero = 22.57
-    resultado = signo(numero)
-    assert isinstance(resultado, int), "El resultado debe ser un número entero."
-    assert resultado > 0, "El resultado debe ser menor que cero."
-    assert resultado == 1, "El resultado obtenido no es el esperado."
 
+    # Entrada para probar en la función.
+    numero: int = -33
 
-def test_signo_positivo_float():
-    """
-    Testeo el signo positivo de la función, con
-    número decimal (float) en el input.
-    """
-    numero = 22.57
-    resultado = signo(numero)
-    assert isinstance(resultado, int), "El resultado debe ser un número entero."
-    assert resultado > 0, "El resultado debe ser menor que cero."
-    assert resultado == 1, "El resultado obtenido no es el esperado."
+    resultado: int = signo(numero)
+
+    # Mensaje de error (string muy larga, uso de variable por pycodestyle).
+    error_msj: str = "El resultado debe ser un número entero."
+    assert (isinstance(resultado, int)), error_msj
+
+    assert (resultado < 0), "El resultado debe ser menor que cero."
+
+    assert (resultado == -1), "El resultado obtenido no es el esperado."
