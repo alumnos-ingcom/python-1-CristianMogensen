@@ -17,7 +17,10 @@ def compara(numero, otro_numero):
 
 
 # Reutilizo la funcion signo del ejercicio 2:
-from ejercicio2 import signo
+try:
+    from ejercicio2 import signo
+except ImportError as exc:
+    from src.ejercicio2 import signo
 
 
 def compara(numero: int, otro_numero: int) -> int:
