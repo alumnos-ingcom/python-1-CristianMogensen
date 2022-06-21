@@ -142,7 +142,9 @@ def ordenar_mayor_a_menor(uno: Union[int, float],
 
         if (uno == dos) and (dos == tres):
 
-            resultado = uno
+            resultado[0] = uno
+            resultado[1] = uno
+            resultado[2] = uno
 
         else:
 
