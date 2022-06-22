@@ -81,7 +81,7 @@ def principal():
         # un valor válido. (se repite el input hasta que sea correcto).
         try:
 
-            multiplo = int(input("Ingrese el primer número: "))
+            multiplo = int(input("Ingrese el segundo número (múltiplo): "))
 
         except ValueError as exc:
 
