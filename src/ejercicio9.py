@@ -29,9 +29,9 @@ def factores_primos(numero: int) -> tuple:
 
     # Se declara y define la variable en la que se guardarán los resultados,
     # inicializado con el primer factor primo de cualquier número (el 1).
-    resultado = (1,)
+    resultado: tuple = (1,)
 
-    modulo = abs(numero)
+    modulo: int = abs(numero)
 
     # Caso trivial.
     if (numero == 0):
@@ -55,12 +55,18 @@ def factores_primos(numero: int) -> tuple:
         # primo.
         i: int = 2
 
-        while (i < modulo):
+        while (i <= modulo):
 
             # Se verifica si es divisible por i.
             if ((modulo % i) == 0):
 
+                modulo = modulo // i
+
                 resultado += (i,)
+
+                i = 2
+
+                continue
 
             i += 1
 
